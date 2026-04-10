@@ -90,30 +90,32 @@ animatedElements.forEach(el => {
 // ===================================
 // SWIPER INITIALIZATION
 // ===================================
-const portfolioSwiper = new Swiper('.portfolio__swiper', {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  loop: true,
-  autoplay: {
-    delay: 4000,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  breakpoints: {
-    640: {
-      slidesPerView: 1,
+document.addEventListener('DOMContentLoaded', function() {
+  const portfolioSwiper = new Swiper('.portfolio__swiper', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
     },
-    768: {
-      slidesPerView: 2,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
     },
-    1024: {
-      slidesPerView: 2,
-      spaceBetween: 40,
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 40,
+      },
     },
-  },
+  });
 });
 
 // ===================================
