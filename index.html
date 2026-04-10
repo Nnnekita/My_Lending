@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Портфолио фронтенд-разработчика">
+    <title>Фронтенд-разработчик | Портфолио</title>
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#hero" class="nav__logo">My Lending</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">Обо мне</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#skills" class="nav__link">Навыки</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#portfolio" class="nav__link">Портфолио</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">Контакты</a>
+                        </li>
+                    </ul>
+                    <button class="nav__close" id="nav-close">&times;</button>
+                </div>
+                
+                <button class="nav__toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero section" id="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <div class="hero__text">
+                        <p class="hero__greeting">Привет, меня зовут</p>
+                        <h1 class="hero__title">Никита Игоревич</h1>
+                        <p class="hero__subtitle">Фронтенд-разработчик</p>
+                        <p class="hero__description">
+                            Создаю современные, адаптивные веб-приложения с чистым кодом и красивым дизайном.
+                        </p>
+                        <div class="hero__buttons">
+                            <a href="#portfolio" class="btn btn--primary">Посмотреть работы</a>
+                            <a href="#contact" class="btn btn--outline">Связаться со мной</a>
+                        </div>
+                    </div>
+                    <div class="hero__image">
+                        <div class="hero__image-wrapper">
+                            <img src="images/Me.jpg" alt="Никита Игоревич" class="hero__img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about section" id="about">
+            <div class="container">
+                <h2 class="section__title">Обо мне</h2>
+                <div class="about__content">
+                    <div class="about__text">
+                        <p>
+                            Я увлечённый фронтенд-разработчик с опытом создания современных веб-приложений.
+                            Специализируюсь на создании адаптивных и удобных интерфейсов с использованием новейших технологий.
+                        </p>
+                        <p>
+                            Мой фокус — написание чистого, эффективного кода и создание превосходного пользовательского опыта.
+                            Постоянно учусь и слежу за трендами и лучшими практиками индустрии.
+                        </p>
+                        <div class="about__stats">
+                            <div class="stat">
+                                <span class="stat__number">2+</span>
+                                <span class="stat__label">Лет опыта</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat__number">10+</span>
+                                <span class="stat__label">Завершённых проектов</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat__number">15+</span>
+                                <span class="stat__label">Довольных клиентов</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills section" id="skills">
+            <div class="container">
+                <h2 class="section__title">Мои навыки</h2>
+                <div class="skills__grid">
+                    <div class="skill-card">
+                        <div class="skill-card__icon">🎨</div>
+                        <h3 class="skill-card__title">HTML5 и CSS3</h3>
+                        <p class="skill-card__desc">Семантическая вёрстка, современный CSS, Flexbox, Grid, анимации</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card__icon">⚡</div>
+                        <h3 class="skill-card__title">JavaScript</h3>
+                        <p class="skill-card__desc">ES6+, TypeScript, работа с DOM, API</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card__icon">⚛️</div>
+                        <h3 class="skill-card__title">React</h3>
+                        <p class="skill-card__desc">Компоненты, Hooks, Redux, Next.js</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card__icon">📱</div>
+                        <h3 class="skill-card__title">Адаптивный дизайн</h3>
+                        <p class="skill-card__desc">Mobile-first, кросс-браузерная совместимость</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card__icon">🛠️</div>
+                        <h3 class="skill-card__title">Инструменты</h3>
+                        <p class="skill-card__desc">Git, Webpack, Vite, npm, Figma</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card__icon">🚀</div>
+                        <h3 class="skill-card__title">Производительность</h3>
+                        <p class="skill-card__desc">Оптимизация, Lighthouse, лучшие практики</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section class="portfolio section" id="portfolio">
+            <div class="container">
+                <h2 class="section__title">Портфолио</h2>
+                <div class="portfolio__swiper swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Проект 1 -->
+                        <div class="swiper-slide">
+                            <div class="project-card">
+                                <div class="project-card__image">
+                                    <img src="https://via.placeholder.com/600x400/1F2937/38BDF8?text=Проект+1" alt="Проект 1">
+                                </div>
+                                <div class="project-card__content">
+                                    <h3 class="project-card__title">Интернет-магазин</h3>
+                                    <p class="project-card__desc">Современный онлайн-магазин с функционалом корзины</p>
+                                    <div class="project-card__tags">
+                                        <span class="tag">React</span>
+                                        <span class="tag">Redux</span>
+                                        <span class="tag">SCSS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Проект 2 -->
+                        <div class="swiper-slide">
+                            <div class="project-card">
+                                <div class="project-card__image">
+                                    <img src="https://via.placeholder.com/600x400/1F2937/38BDF8?text=Проект+2" alt="Проект 2">
+                                </div>
+                                <div class="project-card__content">
+                                    <h3 class="project-card__title">Панель аналитики</h3>
+                                    <p class="project-card__desc">Дашборд аналитики с визуализацией данных</p>
+                                    <div class="project-card__tags">
+                                        <span class="tag">TypeScript</span>
+                                        <span class="tag">Chart.js</span>
+                                        <span class="tag">Tailwind</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Проект 3 -->
+                        <div class="swiper-slide">
+                            <div class="project-card">
+                                <div class="project-card__image">
+                                    <img src="https://via.placeholder.com/600x400/1F2937/38BDF8?text=Проект+3" alt="Проект 3">
+                                </div>
+                                <div class="project-card__content">
+                                    <h3 class="project-card__title">Лендинг</h3>
+                                    <p class="project-card__desc">Адаптивная посадочная страница с анимациями</p>
+                                    <div class="project-card__tags">
+                                        <span class="tag">HTML</span>
+                                        <span class="tag">SCSS</span>
+                                        <span class="tag">JavaScript</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Проект 4 -->
+                        <div class="swiper-slide">
+                            <div class="project-card">
+                                <div class="project-card__image">
+                                    <img src="https://via.placeholder.com/600x400/1F2937/38BDF8?text=Проект+4" alt="Проект 4">
+                                </div>
+                                <div class="project-card__content">
+                                    <h3 class="project-card__title">Приложение погоды</h3>
+                                    <p class="project-card__desc">Прогноз погоды с использованием внешнего API</p>
+                                    <div class="project-card__tags">
+                                        <span class="tag">JavaScript</span>
+                                        <span class="tag">API</span>
+                                        <span class="tag">CSS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <h2 class="section__title">Свяжитесь со мной</h2>
+                <div class="contact__content">
+                    <p class="contact__text">
+                        Я всегда открыт для новых возможностей и интересных проектов.
+                        Не стесняйтесь обращаться!
+                    </p>
+                    <div class="contact__links">
+                        <a href="mailto:kosmit.play@mail.ru" class="contact__link">
+                            <span class="contact__icon">📧</span>
+                            <span>kosmit.play@mail.ru</span>
+                        </a>
+                        <a href="https://t.me/KeepYM" target="_blank" class="contact__link">
+                            <span class="contact__icon">💬</span>
+                            <span>@KeepYM</span>
+                        </a>
+                        <a href="https://vk.com/nnnekita" target="_blank" class="contact__link">
+                            <span class="contact__icon">🔗</span>
+                            <span>https://vk.com/nnnekita</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">&copy; 2026 Никита Игоревич. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
