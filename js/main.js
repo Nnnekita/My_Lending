@@ -160,7 +160,7 @@ if (heroImage) {
 // TYPING EFFECT (OPTIONAL ENHANCEMENT)
 // ===================================
 const heroSubtitle = document.querySelector('.hero__subtitle');
-const roles = ['Фронтенд-разработчик', 'Энтузиаст UI/UX', 'Веб-разработчик'];
+const roles = ['Графический дизайнер'];
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
