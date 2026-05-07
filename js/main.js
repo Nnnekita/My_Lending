@@ -189,15 +189,19 @@ let charIndex = 0;
 let isDeleting = false;
 let typingSpeed = 100;
 
+function setHeroSubtitle(text) {
+  heroSubtitle.textContent = text || '\u00A0';
+}
+
 function typeRole() {
   const currentRole = roles[roleIndex];
   
   if (isDeleting) {
-    heroSubtitle.textContent = currentRole.substring(0, charIndex - 1);
+    setHeroSubtitle(currentRole.substring(0, charIndex - 1));
     charIndex--;
     typingSpeed = 50;
   } else {
-    heroSubtitle.textContent = currentRole.substring(0, charIndex + 1);
+    setHeroSubtitle(currentRole.substring(0, charIndex + 1));
     charIndex++;
     typingSpeed = 100;
   }
@@ -216,6 +220,6 @@ function typeRole() {
 
 // Start typing effect
 if (heroSubtitle && !reduceMotion.matches) {
-  heroSubtitle.textContent = '';
+  setHeroSubtitle('');
   setTimeout(typeRole, 1000);
 }
