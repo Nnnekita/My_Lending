@@ -5,25 +5,35 @@ const navMenu = document.getElementById('nav-menu');
 const navToggle = document.getElementById('nav-toggle');
 const navClose = document.getElementById('nav-close');
 const navLinks = document.querySelectorAll('.nav__link');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+function setMenuState(isOpen) {
+  if (!navMenu || !navToggle) {
+    return;
+  }
+
+  navMenu.classList.toggle('active', isOpen);
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+}
 
 // Open menu
 if (navToggle) {
   navToggle.addEventListener('click', () => {
-    navMenu.classList.add('active');
+    setMenuState(true);
   });
 }
 
 // Close menu
 if (navClose) {
   navClose.addEventListener('click', () => {
-    navMenu.classList.remove('active');
+    setMenuState(false);
   });
 }
 
 // Close menu on link click
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
-    navMenu.classList.remove('active');
+    setMenuState(false);
   });
 });
 
@@ -69,23 +79,30 @@ const observerOptions = {
   rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, observerOptions);
-
 // Add fade-in class to elements and observe them
 const animatedElements = document.querySelectorAll(
   '.section__title, .hero__text, .hero__image, .about__text, .skill-card, .project-card, .contact__content'
 );
 
-animatedElements.forEach(el => {
-  el.classList.add('fade-in');
-  observer.observe(el);
-});
+if ('IntersectionObserver' in window && !reduceMotion.matches) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  animatedElements.forEach(el => {
+    el.classList.add('fade-in');
+    observer.observe(el);
+  });
+} else {
+  animatedElements.forEach(el => {
+    el.classList.add('visible');
+  });
+}
 
 // ===================================
 // SWIPER INITIALIZATION
@@ -147,9 +164,15 @@ window.addEventListener('scroll', highlightNavLink);
 // PARALLAX EFFECT ON HERO IMAGE
 // ===================================
 const heroImage = document.querySelector('.hero__image-wrapper');
+const desktopMedia = window.matchMedia('(min-width: 993px)');
 
 if (heroImage) {
   window.addEventListener('scroll', () => {
+    if (!desktopMedia.matches || reduceMotion.matches) {
+      heroImage.style.transform = '';
+      return;
+    }
+
     const scrolled = window.pageYOffset;
     const rate = scrolled * 0.3;
     heroImage.style.transform = `translateY(${rate}px)`;
@@ -160,7 +183,7 @@ if (heroImage) {
 // TYPING EFFECT (OPTIONAL ENHANCEMENT)
 // ===================================
 const heroSubtitle = document.querySelector('.hero__subtitle');
-const roles = ['Fronted Разработчик'];
+const roles = ['Frontend-разработчик', 'Верстаю по Figma', 'Делаю адаптивные интерфейсы'];
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -192,6 +215,7 @@ function typeRole() {
 }
 
 // Start typing effect
-if (heroSubtitle) {
+if (heroSubtitle && !reduceMotion.matches) {
+  heroSubtitle.textContent = '';
   setTimeout(typeRole, 1000);
 }
