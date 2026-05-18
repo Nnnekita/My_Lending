@@ -133,6 +133,16 @@ document.addEventListener('DOMContentLoaded', function() {
       },
     },
   });
+
+  // ===================================
+  // PORTFOLIO CARD CLICK
+  // ===================================
+  const projectCards = document.querySelectorAll('.project-card[data-link]');
+  projectCards.forEach(card => {
+    card.addEventListener('click', () => {
+      window.open(card.dataset.link, '_blank', 'noopener,noreferrer');
+    });
+  });
 });
 
 // ===================================
