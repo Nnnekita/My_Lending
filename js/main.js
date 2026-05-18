@@ -128,8 +128,8 @@ document.addEventListener('DOMContentLoaded', function() {
         slidesPerView: 2,
       },
       1024: {
-        slidesPerView: 2,
-        spaceBetween: 40,
+        slidesPerView: 3,
+        spaceBetween: 30,
       },
     },
   });
